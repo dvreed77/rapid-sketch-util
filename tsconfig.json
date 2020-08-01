@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "esModuleInterop": true,
     "outDir": "dist",
     "lib": ["ES6", "DOM"],
     "target": "ES5"
