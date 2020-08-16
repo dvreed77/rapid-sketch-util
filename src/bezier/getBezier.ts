@@ -7,14 +7,14 @@ export function getBezier([l1, l2], bez, bottom = true) {
 
   if (bottom) {
     if (a2 > a1) {
-      const { intersectionPts: iA, ts: tsA } = lineBezierIntersection(l2, bez);
-      const { bezA, bezB } = splitBezier(bez, tsA[1]);
+      const { ts: tsA } = lineBezierIntersection(l2, bez);
+      const { bezB } = splitBezier(bez, tsA[1]);
 
       const { ts: tsB } = lineBezierIntersection(l1, bezB);
 
       const z = tsB.find((d) => d >= 0 || d <= 1);
 
-      const { bezA: bezC, bezB: bezD } = splitBezier(bezB, z);
+      const { bezB: bezD } = splitBezier(bezB, z);
 
       return bezD;
     } else {
@@ -31,13 +31,13 @@ export function getBezier([l1, l2], bez, bottom = true) {
     }
   } else {
     if (a2 < a1) {
-      const { intersectionPts: iA, ts: tsA } = lineBezierIntersection(l2, bez);
-      const { bezA, bezB } = splitBezier(bez, tsA[1]);
+      const { ts: tsA } = lineBezierIntersection(l2, bez);
+      const { bezA } = splitBezier(bez, tsA[1]);
       const { ts: tsB } = lineBezierIntersection(l1, bezA);
 
       const z = tsB.find((d) => d >= 0 || d <= 1);
 
-      const { bezA: bezC, bezB: bezD } = splitBezier(bezA, z);
+      const { bezA: bezC } = splitBezier(bezA, z);
 
       return bezC;
     } else {

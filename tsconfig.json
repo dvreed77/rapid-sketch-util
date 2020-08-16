@@ -2,8 +2,13 @@
   "compilerOptions": {
     "declaration": true,
     "esModuleInterop": true,
+    "module": "commonjs",
     "outDir": "dist",
     "lib": ["ES6", "DOM"],
-    "target": "ES5"
-  }
+    "target": "ES6",
+    "strict": false,
+    "noImplicitUseStrict": true,
+    "alwaysStrict": false
+  },
+  "exclude": ["examples/**/*.ts", "dist/", "./node_modules/*"]
 }

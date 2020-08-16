@@ -9,3 +9,5 @@ export function randomInt(min: number, max: number) {
 export function randomPick(items: any[]) {
   return items[randomInt(0, items.length)];
 }
+
+export * from "./randomF";

@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { Shape } from "./Shape";
 export function chaikin(shape, ratio, iterations = 0) {
   if (iterations > 10) iterations = 10;
-  if (iterations == 0) return shape;
+  if (iterations === 0) return shape;
 
   const nCorners = shape.pts.length;
 
